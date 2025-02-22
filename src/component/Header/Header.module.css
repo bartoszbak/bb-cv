@@ -1,0 +1,12 @@
+.header {
+  padding: var(--s-m);
+  display: flex;
+  justify-content: space-between;
+}
+
+.header h1 {
+  font-size: var(--font-size-large);
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,45 @@
+:root {
+  --font-size-small: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-large: 1.25rem;
+  --font-size-x-large: 1.5rem;
+  --font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --line-height: 1.5;
+  --font-weight: 400;
+  --transition-speed: 0.3s;
+  --s-none: 0;
+  --s-xs: 0.24rem;
+  --s-s: 0.48rem;
+  --s-m: 0.96rem;
+  --s-l: 1.92rem;
+  --s-xl: 3.84rem;
+  --s-xxl: 7.68rem;
+}
+
+/* Light Mode */
+[data-theme="light"] {
+  --bg-color: rgb(255, 255, 255);
+  --text-color: rgb(24, 24, 24);
+  --surface-bg-color: rgb(24, 24, 24);
+  --surface-text-color: rgb(255, 255, 255);
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --bg-color: rgb(24, 24, 24);
+  --text-color: rgb(255, 255, 255);
+  --surface-bg-color: rgb(255, 255, 255);
+  --surface-text-color: rgb(24, 24, 24);
+}
+
+/* Apply Global Styles */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+  font-weight: var(--font-weight);
+  padding: var(--s-none);
+  margin: var(--s-none);
+}
