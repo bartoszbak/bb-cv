@@ -1,4 +1,4 @@
-import { useLayoutEffect, useImperativeHandle, useState, forwardRef } from "react";
+import { useLayoutEffect, useState } from "react";
 import styles from "./Background.module.css";
 
 const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
@@ -10,7 +10,7 @@ const generateRandomGradient = () => {
   return { gradient: `conic-gradient(at 50% 50%, ${colors.join(", ")})`, mainColor: colors[0] };
 };
 
-const Background = forwardRef((_, ref) => {
+const Background = ({ onUpdate }) => {
   const [{ gradient, mainColor }, setBackground] = useState(generateRandomGradient);
 
   const updateBackground = () => {
@@ -24,15 +24,15 @@ const Background = forwardRef((_, ref) => {
     }
   };
 
-  useImperativeHandle(ref, () => ({
-    regenerate: updateBackground
-  }));
-
   useLayoutEffect(() => {
     updateBackground();
+    
+    if (onUpdate) {
+      onUpdate(updateBackground);
+    }
   }, []);
 
   return <div className={styles.background} style={{ background: gradient, filter: "blur(96px)" }}></div>;
-});
+};
 
 export default Background;
