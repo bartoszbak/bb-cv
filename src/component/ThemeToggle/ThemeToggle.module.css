@@ -1,4 +1,4 @@
-button {
+.toggle {
   background: var(--surface-bg-color);
   color: var(--surface-text-color);
   border: none;

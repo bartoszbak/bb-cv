@@ -1,11 +1,18 @@
 import styles from "./Header.module.css";
-import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 function Header() {
   return (
     <header className={styles.header}>
-      <h1>BB.CV</h1>
-      <ThemeToggle />
+      <div className={styles.avatar}></div>
+
+      <div className="details">
+        <h1>Bart Bak</h1>
+        <h2>Design Engineer</h2>
+        <h3>Currently: Tumblr/A8C</h3>
+        <h3>Previously: June, Origin</h3>
+        <h3>Consistently improving</h3>
+      </div>
+
     </header>
   )
 }

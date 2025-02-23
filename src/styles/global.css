@@ -3,20 +3,27 @@
   --font-size-base: 1rem;
   --font-size-large: 1.25rem;
   --font-size-x-large: 1.5rem;
-  --font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  --line-height: 1.5;
-  --font-weight: 400;
+  --font-family: Inter display, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --lh-base: 1.5;
+  --lh-s: 1.25;
+  --fw-400: 400;
+  --fw-500: 500;
   --transition-speed: 0.3s;
   --s-none: 0;
   --s-xs: 0.24rem;
   --s-s: 0.48rem;
+  --s-xm: 0.64rem;
   --s-m: 0.96rem;
-  --s-l: 1.92rem;
-  --s-xl: 3.84rem;
-  --s-xxl: 7.68rem;
+  --s-l: 1.42rem;
+  --s-xl: 1.96rem;
+  --br-full: 9999px;
+  --bg-color: rgb(255, 255, 255);
+  --text-color: rgb(24, 24, 24);
+  --surface-bg-color: rgb(24, 24, 24);
+  --surface-text-color: rgb(255, 255, 255);
 }
 
-/* Light Mode */
+/* 
 [data-theme="light"] {
   --bg-color: rgb(255, 255, 255);
   --text-color: rgb(24, 24, 24);
@@ -24,13 +31,12 @@
   --surface-text-color: rgb(255, 255, 255);
 }
 
-/* Dark Mode */
 [data-theme="dark"] {
   --bg-color: rgb(24, 24, 24);
   --text-color: rgb(255, 255, 255);
   --surface-bg-color: rgb(255, 255, 255);
   --surface-text-color: rgb(24, 24, 24);
-}
+} */
 
 /* Apply Global Styles */
 body {
@@ -42,4 +48,53 @@ body {
   font-weight: var(--font-weight);
   padding: var(--s-none);
   margin: var(--s-none);
+}
+
+body:hover .changeGradinet{
+  opacity: 1;
+}
+
+.bb{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+.changeGradinet{
+  opacity: 0;
+  position: absolute;
+  top: var(--s-l);
+  right: var(--s-l);
+  padding: var(--s-xm);
+  font-size: var(--font-size-base);
+  font-weight: var(--fw-500);
+  border-radius: var(--br-full);
+  background: rgba(255, 255, 255, 0.15); 
+  backdrop-filter: blur(128px); 
+  border: none;
+  transition: all var(--transition-speed);
+}
+
+.changeGradinet:active{
+  transform: translateY(1px);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.changeGradinet:hover{
+  background: rgba(255, 255, 255, 0.5); 
+}
+ 
+@media only screen and (max-width: 720px) {
+  .changeGradinet{
+    opacity: 1;
+    right: var(--s-m);
+    padding: var(--s-s);
+  }
+}
+
+.color{
+  height: 24px;
+  width: 24px;
+  border-radius: var(--br-full);
 }
