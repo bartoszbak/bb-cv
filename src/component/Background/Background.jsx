@@ -10,12 +10,6 @@ const generateRandomGradient = () => {
   return { gradient: `conic-gradient(at 50% 50%, ${colors.join(", ")})`, mainColor: colors[0] };
 };
 
-// Viewport height unit fix
-window.addEventListener('resize', () => {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-});
-
 const Background = forwardRef((_, ref) => {
   const [{ gradient, mainColor }, setBackground] = useState(generateRandomGradient);
 
