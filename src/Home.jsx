@@ -1,4 +1,4 @@
-import Header from './component/header/Header';
+import Header from './component/Header/Header';
 import Footer from './component/Footer/Footer';
 import Background from './component/Background/Background';
 import { useRef } from "react";
@@ -11,9 +11,9 @@ function Home() {
   
   return (
     <div className="bb">
-        <button className='changeGradinet' onClick={() => backgroundRef.current?.regenerate()}>
+        {/* <button className='changeGradinet' onClick={() => backgroundRef.current?.regenerate()}>
           <div className="color" data-color></div>
-        </button>
+        </button> */}
         <Background ref={backgroundRef}/>
         <Header /> 
         <Footer /> 

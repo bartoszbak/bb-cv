@@ -3,7 +3,7 @@ import styles from "./Header.module.css";
 function Header() {
   return (
     <header className={styles.header}>
-      <div className={styles.avatar}></div>
+      <div className={styles.avatar} data-avatar></div>
 
       <div className="details">
         <h1>Bart Bak</h1>
