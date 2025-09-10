@@ -32,7 +32,7 @@ const Background = ({ onUpdate }) => {
     }
   }, []);
 
-  return <div className={styles.background} style={{ background: gradient, filter: "blur(96px)" }}></div>;
+  return <div className={styles.background} style={{ background: gradient, filter: "blur(196px)" }}></div>;
 };
 
 export default Background;
