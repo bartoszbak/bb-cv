@@ -6,7 +6,6 @@
   position: absolute;
   bottom: 0;
   gap: var(--s-xl);
-  transition: all var(--transition-speed);
   align-items: flex-end;
 }
 
@@ -23,7 +22,7 @@
 
 }
 
-.header .avatar {
+/* .header .avatar {
   width: 116px;
   height: 116px;
   border-radius: var(--br-full);
@@ -40,10 +39,11 @@
     width: 96px;
     height: 96px;
   }
+} */
+.avatarX{
+  transition: all var(--transition-speed) cubic-bezier(0.65,0.05,0.36,1);
 }
-
-.header .avatar:hover {
-  background-image: url('/assets/bb-c.jpg');
+.avatarX:hover {
   transform: scale(0.96);
   filter: blur(0px);
 }
